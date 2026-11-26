@@ -34,4 +34,5 @@
   Python `len()` 62, gate 1–200 satisfied, non-whitespace. Node v24.22.1
   (grader runs Node 22.23.4; the program uses only `node:fs`, no
   version-sensitive APIs).
-- No shields word anywhere in the repo (grep verified before commit).
+- README carries only the 3 live make.fun badges (grep verified before
+  commit); no static badge provider is referenced anywhere in the repo.
