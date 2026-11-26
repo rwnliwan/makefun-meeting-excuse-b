@@ -36,3 +36,27 @@
   version-sensitive APIs).
 - README carries only the 3 live make.fun badges (grep verified before
   commit); no static badge provider is referenced anywhere in the repo.
+- LICENSE now carries an explicit `SPDX-License-Identifier: MIT` line
+  (added after check v1 — the check passed license_osi, but the brief
+  requires MIT + SPDX stated plainly).
+
+### v2 — bundle + check (numbers real, from this session)
+- Bundle v1: `u-mfnakmal-the-funniest-excuse-for-skipping-a-meeting-5cecf163-bundle-v1.tar.gz`,
+  183,757 bytes, sha256
+  `1959cefeff00d4c3676da66e43370711d0326da310bf30c98df13652ca5cea0f`.
+  1 session (32 turns, 113 lines), prompt from prompt-5b.txt, 0 usage rows
+  attached (subagent session still running — expected; coordinator
+  re-bundles with the usage row from muse.db).
+- Check v1 against commit `bb8b10149c4a73659524c0db1b7c50a522556a2c`:
+  **13 passed / 1 failed / 5 skipped / 5 at-submission**. The single
+  failure is `thinking_priced` only (0 usage rows — the known builder
+  ceiling, coordinator's re-bundle step). All other gates pass, including
+  `thinking_reproduces` 96.9% (64 of 66 lines authored, main.ts 11
+  authored lines), `thinking_revised` (trial-log revised 3×),
+  `thinking_turns` 27, `entrypoint` (main.ts, node22),
+  `license_osi`, `snapshot` (5 files, 5,618 bytes).
+- Repo: https://github.com/rwnliwan/makefun-meeting-excuse-b — public,
+  default branch main, HEAD = ls-remote, About verified via `gh api`
+  (homepage + topics makefun/ai-agents/bounties).
+- NOT submitted — coordinator's step: re-bundle from final HEAD with
+  usage rows → re-check 14/0 → submit.
